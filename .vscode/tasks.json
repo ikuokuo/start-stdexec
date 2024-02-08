@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "make build TYPE=Debug",
+			"command": "make",
+			"args": ["build", "TYPE=Debug"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "compiler: make"
+		},
+		{
+			"type": "cppbuild",
+			"label": "make build TYPE=Release",
+			"command": "make",
+			"args": ["build", "TYPE=Release"],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"detail": "compiler: make"
+		}
+	]
+}
