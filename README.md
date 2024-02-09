@@ -18,6 +18,8 @@ Then,
 ```bash
 # If on Ubuntu/Debian
 sudo apt install -y build-essential cmake git
+#  deps of workflow
+sudo apt install -y libssl-dev
 
 git clone --depth 1 https://github.com/ikuokuo/start-stdexec.git
 
@@ -38,14 +40,12 @@ make
 
 - [stdexec_start.cc](samples/stdexec_start.cc): start your first stdexec program
 - [taskflow_start.cc](samples/taskflow_start.cc): start your first taskflow program
+- [workflow_graph.cc](samples/workflow_graph.cc): workflow graph sample
 
 ## See also
 
-Asynchronous Programming:
-
-- [asio](https://think-async.com/Asio/index.html)
-
-Parallel Task Programming:
-
-- [taskflow](https://github.com/taskflow/taskflow): [documentation](https://taskflow.github.io/taskflow/index.html)
+- [asio](https://think-async.com/Asio/index.html): asynchronous programming
+- [taskflow](https://github.com/taskflow/taskflow): parallel task programming
   - [Handbook](https://taskflow.github.io/taskflow/pages.html): [Cookbook](https://taskflow.github.io/taskflow/Cookbook.html), [Examples](https://taskflow.github.io/taskflow/Examples.html)
+- [workflow](https://github.com/sogou/workflow): parallel computing and async network framework
+- [CGraph](https://github.com/ChunelFeng/CGraph): DAG computing framework

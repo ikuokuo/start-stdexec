@@ -47,10 +47,18 @@ CPMAddPackage(
   DOWNLOAD_ONLY YES
 )
 
+CPMAddPackage(
+  NAME workflow
+  GITHUB_REPOSITORY sogou/workflow
+  OPTIONS "TF_BUILD_TESTS OFF"
+  VERSION 0.11.2
+)
+
 # targets
 
 include_directories(
   ${taskflow_SOURCE_DIR}
+  ${workflow_SOURCE_DIR}/src/include
 )
 
 set(MY_TARGETS )
@@ -70,6 +78,13 @@ list(APPEND MY_TARGETS stdexec_start)
 add_executable(taskflow_start samples/taskflow_start.cc)
 target_link_libraries(taskflow_start fmt spdlog)
 list(APPEND MY_TARGETS taskflow_start)
+
+### workflow_graph
+
+add_executable(workflow_graph samples/workflow_graph.cc)
+target_link_libraries(workflow_graph fmt spdlog workflow-shared)
+target_compile_options(workflow_graph PRIVATE -Wno-unused-parameter -Wno-pedantic)
+list(APPEND MY_TARGETS workflow_graph)
 
 # install
 
